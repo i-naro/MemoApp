@@ -14,7 +14,7 @@ class CircleButton extends React.Component {
     }
 
     return(
-      <TouchableHighlight style={[ styles.container,style ]} onPress={onPress}>
+      <TouchableHighlight style={[ styles.container,style ]} onPress={onPress} underlayColor="transparent">
         <View style={[ styles.CircleButton,{ backgroundColor: bgColor } ]}>
           <Text style={[ styles.CircleButtonTitle, { color:textColor } ]}>
             {this.props.children}
@@ -27,6 +27,8 @@ class CircleButton extends React.Component {
 
 const styles = StyleSheet.create({
   container:{
+    width: 48,
+    height: 48,
     position: "absolute",
     bottom: 32,
     right: 32,

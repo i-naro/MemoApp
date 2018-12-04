@@ -6,6 +6,8 @@ import CircleButton from "../elements/CircleButton";
 class MemoDetailScreen extends React.Component{
   static navigationOptions = {
     title: "Memot",
+    headerTintColor: "#fff",
+    headerBackTitle: null,
     headerStyle: {
       backgroundColor: "#265366",
     },

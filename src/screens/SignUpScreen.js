@@ -2,6 +2,15 @@ import React from "react";
 import { StyleSheet, TextInput, View, Text, TouchableHighlight } from "react-native";
 
 class SignUpScreen extends React.Component{
+  static navigationOptions = {
+    title: "Memot",
+    headerStyle: {
+      backgroundColor: "#265366",
+    },
+    headerTitleStyle: {
+      color: '#fff',
+    },
+  };
   render(){
     return(
       <View style={styles.container}>

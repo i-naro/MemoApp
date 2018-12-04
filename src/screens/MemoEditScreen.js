@@ -6,6 +6,8 @@ import CircleButton from "../elements/CircleButton";
 class MemoEditScreen extends React.Component{
   static navigationOptions = {
     title: "Memot",
+    headerTintColor: "#fff",
+    headerBackTitle: null,
     headerStyle: {
       backgroundColor: "#265366",
     },
@@ -19,7 +21,9 @@ class MemoEditScreen extends React.Component{
 
         <TextInput style={styles.memoEditInput} value="Hi" multiline />
 
-        <CircleButton>a</CircleButton>
+        <CircleButton onPress={()=>{this.props.navigation.goBack()}}>
+        +
+        </CircleButton>
 
       </View>
     );
