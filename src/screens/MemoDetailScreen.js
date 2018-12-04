@@ -4,6 +4,15 @@ import { StyleSheet, View, Text} from "react-native";
 import CircleButton from "../elements/CircleButton";
 
 class MemoDetailScreen extends React.Component{
+  static navigationOptions = {
+    title: "Memot",
+    headerStyle: {
+      backgroundColor: "#265366",
+    },
+    headerTitleStyle: {
+      color: '#fff',
+    },
+  };
   render(){
     return(
       <View style={styles.container}>
@@ -23,7 +32,9 @@ class MemoDetailScreen extends React.Component{
           </Text>
         </View>
 
-        <CircleButton color="white" style={styles.editButton}>+</CircleButton>
+        <CircleButton color="white" style={styles.editButton} onPress={() => {this.props.navigation.navigate("MemoEdit"); }}>
+          +
+        </CircleButton>
       </View>
     );
   }
@@ -42,9 +53,9 @@ const styles = StyleSheet.create({
     },
     memoHeaderTitle:{
       fontSize: 30,
-      fontWeigtht: 'bold',
+      fontWeight: 'bold',
       color: '#fff',
-      marginButton: 4,
+      marginBottom: 4,
     },
     memoHeaderDate:{
       fontSize: 12,
@@ -53,7 +64,7 @@ const styles = StyleSheet.create({
     memoContent:{
       padding: 30,
       paddingLeft: 20,
-      paddingRigth: 20,
+      paddingRight: 20,
       paddingBottom: 20,
       backgroundColor:"#fff",
       flex: 1,

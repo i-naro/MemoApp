@@ -4,6 +4,15 @@ import { StyleSheet, View, Text, TextInput } from "react-native";
 import CircleButton from "../elements/CircleButton";
 
 class MemoEditScreen extends React.Component{
+  static navigationOptions = {
+    title: "Memot",
+    headerStyle: {
+      backgroundColor: "#265366",
+    },
+    headerTitleStyle: {
+      color: '#fff',
+    },
+  };
   render(){
     return(
       <View style={ styles.container }>
@@ -25,10 +34,10 @@ const styles = StyleSheet.create({
   memoEditInput:{
     backgroundColor: "#fff",
     flex: 1,
-    padingTop: 32,
-    padingLeft: 16,
-    padingRight: 16,
-    padingBottom: 16,
+    paddingTop: 32,
+    paddingLeft: 16,
+    paddingRight: 16,
+    paddingBottom: 16,
     fontSize: 16,
   },
 });
