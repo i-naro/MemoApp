@@ -1,5 +1,6 @@
 import React from "react";
 import { StyleSheet, TextInput, View, Text, TouchableHighlight } from "react-native";
+import firebase from "firebase";
 
 class LoginScreen extends React.Component{
 
@@ -19,8 +20,15 @@ class LoginScreen extends React.Component{
     },
   };
 
-  hundleSubmit(){
-    console.log("submited!!")
+  handleSubmit(){
+    firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
+    .then((user)=>{
+      console.log("success!",user);
+      this.props.navigation.navigate("Home");
+    })
+    .catch((error)=>{
+      console.log("error",error);
+    })
     // this.props.navigation.navigate("Home")
     // Log in!!
   };
@@ -48,7 +56,7 @@ class LoginScreen extends React.Component{
           secureTextEntry />
         <TouchableHighlight 
           style={styles.button}
-          onPress={(e) => {this.hundleSubmit(e)}}>
+          onPress={(e) => {this.handleSubmit(e)}}>
           <Text style={styles.buttonTitle}>ログインする</Text>
         </TouchableHighlight>
       </View>
